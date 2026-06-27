@@ -8,12 +8,11 @@
 body {
     background-color: #D85A3E;
     font-family: 'Barlow Condensed', sans-serif;
-    overflow: hidden;
-    height: 100vh;
+    overflow-y: scroll;
 }
 
 
-/* Textura de grano encima del fondo */
+/* Texturas*/
 
 body::before {
     content: '';
@@ -92,7 +91,7 @@ p {
 }
 
 
-/* Ruedas girando */
+/* Sombra */
 
 .shadow {
     animation: sombra 3s ease-in-out infinite;
@@ -111,4 +110,112 @@ p {
         transform: scaleX(1);
         opacity: 0.15;
     }
+}
+
+
+/* NAV */
+
+nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav button {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+nav button:hover {
+    background: #F5C842;
+    color: #1a1a1a;
+}
+
+
+/* SECCIONES */
+
+section {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    background: #D85A3E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 100px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 900;
+    color: #2C1810;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 40px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+section h2 span {
+    color: #FFF8E7;
+}
+
+
+/* TARJETAS */
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.tarjeta {
+    background: #FFF8E7;
+    color: #2C1810;
+    padding: 24px 28px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    max-width: 340px;
+    box-shadow: 4px 4px 0px #2C1810;
+    transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+
+/* MENSAJE FINAL */
+
+.mensaje-final {
+    max-width: 600px;
+}
+
+.mensaje-final p {
+    font-size: 1.4rem;
+    color: #FFF8E7;
+    font-family: 'Barlow Condensed', sans-serif;
+    line-height: 1.6;
+    margin-top: 20px;
 }
